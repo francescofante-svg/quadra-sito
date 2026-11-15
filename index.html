@@ -349,16 +349,17 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   <div class="due"><div class="campo"><label for="f-nome">Come ti chiami</label><input id="f-nome" name="nome" autocomplete="name"></div>
   <div class="campo"><label for="f-mail">La tua mail</label><input id="f-mail" name="mail" type="email" autocomplete="email"></div></div>
   <fieldset class="chips"><legend>Di cosa si tratta</legend><label class="chip"><input type="checkbox" name="area" value="Mail e clienti"><span>Mail e clienti</span></label><label class="chip"><input type="checkbox" name="area" value="Assistente"><span>Assistente</span></label><label class="chip"><input type="checkbox" name="area" value="Automazioni"><span>Automazioni</span></label><label class="chip"><input type="checkbox" name="area" value="Sito o app"><span>Sito o app</span></label><label class="chip"><input type="checkbox" name="area" value="Azienda e IA"><span>Azienda e IA</span></label><label class="chip"><input type="checkbox" name="area" value="Altro"><span>Altro</span></label></fieldset>
+  <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
   <div class="campo"><label for="f-testo">Il problema, con parole tue</label><textarea id="f-testo" name="testo"></textarea></div>
   <div class="invio"><button type="submit" class="btn btn-primario">Invia</button><p class="esito" id="esito" role="status" aria-live="polite"></p></div>
-</form><p class="mailbox">Oppure scrivici a <span>ciao@quadra-ia.it</span> (indirizzo da attivare)</p></div>
+</form><p class="mailbox">Oppure scrivici a <span>ciao@quadra-ia.it</span></p></div>
     <div><p class="gruppo-tit">Prima di scriverci</p><div class="faq"><details><summary><span>Devo capire di tecnologia?</span><span class="t" aria-hidden="true"></span></summary><p>No. Ci parli come a una persona, la parte tecnica la seguiamo noi.</p></details><details><summary><span>Perché la diagnosi si paga?</span><span class="t" aria-hidden="true"></span></summary><p>Perché è già lavoro vero: esci con una pagina scritta che puoi usare anche senza di noi. Se poi lavoriamo insieme, la togliamo dal prezzo.</p></details><details><summary><span>Dove finiscono i miei dati?</span><span class="t" aria-hidden="true"></span></summary><p>Solo dove servono al tuo lavoro. Se un servizio passa da fornitori fuori dall&#x27;Europa, te lo diciamo prima.</p></details><details><summary><span>E se il risultato non mi convince?</span><span class="t" aria-hidden="true"></span></summary><p>Ti mostriamo i passaggi mentre lavoriamo: si corregge strada facendo, non alla fine.</p></details></div></div>
   </section>
   <div style="height:48px"></div>
 </div>
 
 </main>
-<footer><div class="wrap"><span>Quadra · Francesco Fante · C.F. da inserire</span><span>Fa quadrare le cose.</span></div></footer>
+<footer><div class="wrap"><span>Quadra · Francesco Fante · C.F. FNTFNC86R09G224N</span><span>Fa quadrare le cose.</span></div></footer>
 <script>
 (function(){
   var T={"inizio": "Quadra", "servizi": "Servizi e prezzi · Quadra", "aziende": "Per le aziende · Quadra", "come": "Come lavoriamo · Quadra", "contatti": "Contatti · Quadra"}, VALIDE=['inizio','servizi','aziende','come','contatti'];
@@ -388,7 +389,20 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   document.addEventListener('click',function(ev){ var a=ev.target.closest('a[href^="#"]'); if(a && a.getAttribute('href')===location.hash){ daHash(); } });
   var f=document.getElementById('modulo');
   if(f){
-    f.addEventListener('submit',function(ev){ev.preventDefault();document.getElementById('esito').textContent="Grazie. Questa \u00e8 una bozza: il modulo non invia ancora nulla.";});
+    f.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      var es=document.getElementById('esito'), bt=f.querySelector('button[type=submit]');
+      var mail=f.mail.value.trim(), testo=f.testo.value.trim();
+      if(!mail||mail.indexOf('@')<1||!testo){ es.style.color=''; es.textContent="Scrivi la tua mail e due righe sul problema, cos\u00ec possiamo risponderti."; return; }
+      var aree=[].map.call(f.querySelectorAll('.chip input:checked'),function(c){return c.value;}).join(', ');
+      bt.disabled=true; es.textContent='Invio in corso…';
+      fetch('https://formsubmit.co/ajax/'+"ciao@quadra-ia.it",{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({_subject:'[Richiesta dal sito] '+(f.nome.value.trim()||mail),_template:'table',_captcha:'false',nome:f.nome.value.trim(),email:mail,argomento:aree||'non indicato',messaggio:testo,_honey:f._honey?f._honey.value:''})})
+      .then(function(r){return r.json();}).then(function(j){
+        if(j && (j.success===true||j.success==='true')){ es.textContent="Grazie, abbiamo ricevuto il tuo messaggio. Ti rispondiamo per mail."; f.reset(); f.querySelectorAll('.chip.on').forEach(function(c){c.classList.remove('on');}); }
+        else throw 0;
+      }).catch(function(){ es.textContent="Non siamo riusciti a inviare il messaggio. Scrivici direttamente a "+"ciao@quadra-ia.it"+'.'; }).then(function(){ bt.disabled=false; });
+    });
     f.querySelectorAll('.chip input').forEach(function(c){c.addEventListener('change',function(){c.parentNode.classList.toggle('on',c.checked);});});
   }
   var C=[{"chip": "Rispondo alle mail la sera", "lei": "Ho uno studio e rispondo alle mail dei clienti alle undici di sera.", "noi": ["Capito. È tempo tolto alla tua sera, e il cliente aspetta comunque.", "Un'assistente su misura legge le mail e ti prepara le risposte nel tuo tono. Tu leggi e premi invia."], "id": "assistente", "nome": "Assistente su misura", "prezzo": "900 € + 149 €/mese"}, {"chip": "Uso ChatGPT in azienda", "lei": "In ufficio usiamo ChatGPT. Possiamo fidarci?", "noi": ["Domanda giusta. A volte inventa, e ci sono leggi nuove che quasi nessuno conosce.", "Il Custode lo mette alla prova ogni mese e vi consegna una pagina con cosa correggere."], "id": "custode", "nome": "Custode degli agenti IA", "prezzo": "630 € poi 70 €/mese"}, {"chip": "Mi serve un sito", "lei": "Mi serve un sito, ma non voglio una cosa complicata.", "noi": ["Allora facciamolo leggero: poche pagine chiare, perfette sul telefono.", "Sito vetrina, 790 €. Per i primi 5 clienti 490 €."], "id": "sito", "nome": "Sito vetrina", "prezzo": "790 €"}, {"chip": "Un collega va in pensione", "lei": "Il nostro tecnico va in pensione e sa tutto lui.", "noi": ["Succede spesso, ed è un rischio vero per l'azienda.", "Con il lascito raccogliamo il suo sapere in un'assistente che risponde ai colleghi."], "id": "lascito", "nome": "Memoria aziendale, il lascito", "prezzo": "da 1.500 € + 49 €/mese"}, {"chip": "Non so da dove partire", "lei": "Ho un problema ma non so nemmeno come spiegarlo.", "noi": ["Va benissimo così. Spiegarlo è il nostro lavoro.", "Partiamo dalla diagnosi: un'ora insieme e una pagina scritta con la soluzione."], "id": "diagnosi", "nome": "Diagnosi iniziale", "prezzo": "150 €"}], box=document.getElementById('msgs'), scelte=document.querySelectorAll('.scelta'), gira=0;
