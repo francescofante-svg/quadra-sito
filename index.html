@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="canonical" href="https://quadra-ia.it/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website"><meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Quadra · Fa quadrare le cose."><meta property="og:description" content="Quadra: assistenti IA su misura, automazioni, siti e app per persone, piccole attività e aziende. Prezzi chiari prima di iniziare, parole semplici, una persona vera che firma ogni lavoro.">
+<meta property="og:url" content="https://quadra-ia.it/"><meta name="theme-color" content="#F6F5F3">
+<style>html,body{margin:0}</style>
+<link rel="alternate" type="text/markdown" title="Riassunto per assistenti IA" href="/llms.txt">
+<title>Quadra</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Assistenti IA, automazioni, siti e app. Ti diciamo prima cosa faremo e quanto costa, con parole semplici.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap">
+<style>
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{text-wrap:balance;font-weight:inherit}
+b,strong{font-weight:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:6px}
+.bozza{font-size:12.5px;text-align:center;padding:7px 16px}
+details summary{cursor:pointer;list-style:none}
+details summary::-webkit-details-marker{display:none}
+.srv summary{display:grid;grid-template-columns:auto 1fr auto auto;gap:4px 18px;align-items:center}
+.srv summary .ico{grid-row:span 2}
+.srv summary .n{grid-column:2}
+.srv summary .r{grid-column:2;grid-row:2}
+.srv summary .p{grid-column:3;grid-row:1/span 2;white-space:nowrap;text-align:right}
+.srv summary .t{grid-column:4;grid-row:1/span 2}
+.srv .t{width:28px;height:28px;border-radius:50%;position:relative;flex:none}
+.srv .t::before,.srv .t::after{content:"";position:absolute;left:8px;top:13px;width:12px;height:1.5px;background:currentColor;transition:transform .25s}
+.srv .t::after{transform:rotate(90deg)}
+.srv[open] .t::after{transform:rotate(0)}
+.srv .corpo{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.srv .corpo .nota{grid-column:1/-1}
+.srv .corpo h4{margin:0 0 8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.srv .corpo ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.srv .corpo li{padding-left:18px;position:relative}
+.srv .corpo li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.45}
+.srv .corpo .no li::before{border-radius:1px;height:1.5px;top:.75em;width:9px}
+form .campo{display:grid;gap:6px}
+form input,form textarea{font:inherit;font-size:16px;width:100%;min-width:0}
+form textarea{min-height:110px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px;border:0;padding:0;margin:0}
+.chips legend{margin-bottom:8px;padding:0}
+.chip{cursor:pointer;user-select:none;position:relative}
+.chip input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;left:0;top:0}
+.chip input:focus-visible+span{outline:2px solid var(--focus);outline-offset:2px}
+.modulo .due{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.invio{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.regole ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:760px){
+  .srv summary{grid-template-columns:auto 1fr auto}
+  .srv summary .p{grid-column:2;grid-row:3;text-align:left}
+  .srv summary .t{grid-column:3;grid-row:1/span 3}
+  .srv .corpo{grid-template-columns:1fr}
+  .regole ol{grid-template-columns:1fr}
+  .modulo .due{grid-template-columns:1fr}
+}
+
+
+/* Quadra, fusione di Voce e Conversa: la carta calda e i titoli leggeri di Voce, un solo carattere (Geist) in tutto il sito, la chat e gli elenchi raggruppati di Conversa.
+   Colori tenui (menta, lavanda, pesca, cielo) su grigio caldo; un solo colore d'azione, un indaco spento. Più pagine, ognuna corta. */
+:root{
+  --bg:#F6F5F3; --card:#FFFFFF; --soft:#EFEDEA; --ink:#1F1C1A; --body:#57524D; --mute:#8A847E; --linea:#E6E3DF;
+  --azione:#4F5DB3; --su-azione:#FFFFFF; --bolla-lei:#E7E3F6; --bolla-noi:#F1EFEC;
+  --menta:#BFE8DB; --lavanda:#D9CFEE; --pesca:#F6D5C0; --cielo:#C8DCF0; --rosa:#F0CED7; --verde:#2F8A62; --focus:#4F5DB3;
+  --sans:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121110; --card:#1B1A18; --soft:#242220; --ink:#F1EEEA; --body:#C8C2BB; --mute:#958E86; --linea:#2C2A27;
+  --azione:#9AA6F0; --su-azione:#14162A; --bolla-lei:#2E2A45; --bolla-noi:#262422; --verde:#5DCB98; --focus:#9AA6F0; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121110; --card:#1B1A18; --soft:#242220; --ink:#F1EEEA; --body:#C8C2BB; --mute:#958E86; --linea:#2C2A27;
+  --azione:#9AA6F0; --su-azione:#14162A; --bolla-lei:#2E2A45; --bolla-noi:#262422; --verde:#5DCB98; --focus:#9AA6F0; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;font-weight:400}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1060px}
+.bozza{color:var(--mute);background:var(--soft)}
+/* barra in alto */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px);border-bottom:1px solid color-mix(in srgb,var(--linea) 70%,transparent)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:20px}
+.marchio{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:24px;font-weight:400;letter-spacing:-.01em}
+.marchio .m{width:26px;height:26px;border-radius:8px;background:radial-gradient(circle at 30% 30%,var(--menta),transparent 70%),radial-gradient(circle at 75% 70%,var(--pesca),transparent 70%),var(--lavanda);transform:rotate(10deg)}
+.top .voci{display:flex;gap:6px}
+.top .voci a{text-decoration:none;color:var(--body);font-size:14.5px;padding:8px 14px;border-radius:999px}
+.top .voci a[aria-current="page"]{background:var(--card);color:var(--ink);box-shadow:0 1px 0 var(--linea)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;font:500 15.5px/1 var(--sans);text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn-primario{background:var(--ink);color:var(--bg)}
+.btn-sec{background:var(--card);color:var(--ink);border-color:var(--linea)}
+.btn-link{color:var(--azione);padding:0 4px}
+.top .btn{min-height:38px;padding:0 16px;font-size:14px}
+.top .dx{display:flex;align-items:center;gap:8px}
+.apri-menu{display:none;font:inherit;width:42px;height:42px;border-radius:50%;border:1px solid var(--linea);background:var(--card);color:var(--ink);cursor:pointer;position:relative}
+.apri-menu i{position:absolute;left:12px;width:16px;height:1.6px;border-radius:2px;background:currentColor;transition:transform .25s,opacity .2s}
+.apri-menu i:nth-child(1){top:15px}.apri-menu i:nth-child(2){top:20px}.apri-menu i:nth-child(3){top:25px}
+.apri-menu[aria-expanded="true"] i:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.apri-menu[aria-expanded="true"] i:nth-child(2){opacity:0}
+.apri-menu[aria-expanded="true"] i:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+.menu{display:none}
+/* pagine */
+.vista{display:none;animation:entra .45s ease-out both}
+.hero > *,.scena,.conv{min-width:0}
+.vista.attiva{display:block}
+@keyframes scende{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.testa{padding-block:56px 28px;max-width:680px}
+.occhiello{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+h1,h2{font-weight:300;letter-spacing:-.025em}
+h3{line-height:1.25}
+.testa h1{font-size:clamp(38px,5.4vw,62px);line-height:1.05;margin-top:12px}
+.testa p{color:var(--body);font-size:18.5px;margin-top:14px}
+h2{font-size:clamp(28px,3.6vw,40px);line-height:1.1}
+section{padding-block:28px}
+/* inizio */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding-block:52px 24px}
+.hero h1{font-size:clamp(46px,6.6vw,84px);line-height:1.02;letter-spacing:-.035em}
+.hero h1 span{display:block;color:var(--mute)}
+.hero p.lead{font-size:19px;color:var(--body);margin-top:20px;max-width:27em}
+.azioni{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}
+.fiducia{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.fiducia span{font-size:13.5px;color:var(--body);background:var(--card);border:1px solid var(--linea);border-radius:999px;padding:6px 14px}
+.scena{position:relative}
+.sfera{position:absolute;width:92%;aspect-ratio:1;right:-14%;top:-20%;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--menta),transparent 58%),radial-gradient(circle at 76% 34%,var(--lavanda),transparent 58%),radial-gradient(circle at 62% 80%,var(--pesca),transparent 58%),radial-gradient(circle at 24% 76%,var(--cielo),transparent 52%),var(--rosa);filter:blur(1px);opacity:.9;animation:respira 7s ease-in-out infinite}
+@keyframes respira{50%{transform:scale(1.05) rotate(10deg)}}
+.conv{position:relative;background:var(--card);border-radius:28px;box-shadow:0 40px 90px -45px rgba(60,40,90,.45);overflow:hidden}
+.conv .barra{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--linea)}
+.conv .av{width:40px;height:40px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--menta),transparent 65%),radial-gradient(circle at 70% 70%,var(--pesca),transparent 65%),var(--lavanda);flex:none}
+.conv .barra p{font-size:15.5px}
+.conv .barra small{display:block;font-size:12.5px;color:var(--mute)}
+.onda{display:flex;gap:3px;align-items:center;height:22px;margin-left:auto}
+.onda i{width:3px;border-radius:2px;background:var(--mute);animation:barra 1.1s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes barra{0%,100%{height:5px}50%{height:var(--h)}}
+.msgs{display:flex;flex-direction:column;gap:8px;padding:20px 18px;min-height:300px}
+.msg{max-width:84%;padding:11px 16px;border-radius:20px;font-size:15.5px;line-height:1.45;animation:su .35s ease-out both}
+@keyframes su{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.msg.lei{align-self:flex-end;background:var(--bolla-lei);border-bottom-right-radius:6px}
+.msg.noi{align-self:flex-start;background:var(--bolla-noi);border-bottom-left-radius:6px}
+.msg.scrive{display:flex;gap:4px;padding:14px 16px}
+.msg.scrive i{width:7px;height:7px;border-radius:50%;background:var(--mute);animation:pt 1s infinite}
+.msg.scrive i:nth-child(2){animation-delay:.15s}.msg.scrive i:nth-child(3){animation-delay:.3s}
+@keyframes pt{50%{opacity:.25}}
+.msg.link{align-self:flex-start;background:transparent;border:1px solid var(--linea);color:var(--azione);text-decoration:none}
+.scelte-box{padding:12px 14px 16px;border-top:1px solid var(--linea);background:color-mix(in srgb,var(--bg) 60%,var(--card))}
+.scelte-box p{font-size:12.5px;color:var(--mute);margin:0 4px 9px}
+.scelte{display:flex;flex-wrap:wrap;gap:7px}
+.scelta{font:400 14.5px/1 var(--sans);padding:10px 14px;border-radius:999px;border:1px solid var(--linea);background:var(--card);color:var(--ink);cursor:pointer}
+.scelta.on{border-color:var(--azione);color:var(--azione)}
+.partenze{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.partenza{display:grid;gap:8px;align-content:start;background:var(--card);border:1px solid var(--linea);border-radius:22px;padding:24px;text-decoration:none;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.partenza:hover{transform:translateY(-2px);box-shadow:0 20px 40px -28px rgba(0,0,0,.3)}
+.partenza::before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,var(--g1),var(--g2))}
+.partenza h3{font-weight:400;font-size:23px;letter-spacing:-.01em}
+.partenza p{color:var(--body);font-size:15.5px}
+.partenza span{color:var(--azione);font-size:15px;margin-top:6px}
+/* elenchi raggruppati */
+.gruppo-tit{font-size:12.5px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em;margin:0 0 9px 18px}
+.gruppo{background:var(--card);border-radius:22px;overflow:hidden;border:1px solid var(--linea)}
+.srv + .srv{border-top:1px solid var(--linea)}
+.srv summary{padding:18px 20px}
+.srv .ico{width:38px;height:38px;padding:8px;border-radius:12px;background:var(--c,var(--lavanda));color:#2A2622}
+.srv .n{font-size:17.5px;font-weight:500}
+.srv .r{color:var(--mute);font-size:14.5px;line-height:1.45}
+.srv .p{font-size:19px}
+.srv .t{width:24px;height:24px;color:var(--mute)}
+.srv .t::before{display:none}
+.srv .t::after{content:"";position:absolute;left:6px;top:5px;width:9px;height:9px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;background:none;transform:rotate(45deg);transition:transform .25s}
+.srv[open] .t::after{transform:rotate(225deg);top:10px}
+.srv .corpo{padding:0 20px 22px 76px;font-size:15px;color:var(--body)}
+.srv .corpo .nota{color:var(--ink);background:var(--soft);border-radius:12px;padding:10px 14px}
+.srv .corpo h4{color:var(--mute);font-size:11.5px}
+.fisco{color:var(--mute);font-size:13.5px;margin:12px 18px 0}
+.invito{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;background:linear-gradient(120deg,color-mix(in srgb,var(--menta) 45%,var(--card)),color-mix(in srgb,var(--lavanda) 45%,var(--card)));border-radius:24px;padding:28px 30px;margin-top:20px}
+.invito h3{font-weight:400;font-size:24px;letter-spacing:-.01em}
+.invito p{color:var(--body);font-size:15.5px;margin-top:4px}
+/* aziende */
+.regole{background:var(--card);border:1px solid var(--linea);border-radius:24px;padding:30px;position:relative;overflow:hidden}
+.regole::after{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,var(--lavanda),transparent 70%);opacity:.7;pointer-events:none}
+.regole h3{font-weight:300;font-size:30px;line-height:1.15;letter-spacing:-.02em;position:relative}
+.regole .rr{color:var(--body);margin:6px 0 22px;position:relative}
+.regole li{background:var(--soft);border-radius:18px;padding:20px;position:relative}
+.regole .q{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.regole li p{margin:8px 0 6px;font-size:19px;line-height:1.35}
+.regole small{color:var(--mute);font-size:13px}
+.regole .rf{margin-top:18px}
+.regole .rn{color:var(--mute);font-size:13px;margin-top:6px}
+.metodo{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;counter-reset:m}
+.metodo div{background:var(--card);border:1px solid var(--linea);border-radius:20px;padding:22px}
+.metodo .num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:14px;background:var(--c);color:#2A2622}
+.metodo h3{font-size:17px;font-weight:500;margin:14px 0 4px}
+.metodo p{color:var(--body);font-size:15px}
+.titoletto{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:10px 30px;margin-bottom:18px}
+.titoletto p{color:var(--body);max-width:30em}
+/* come lavoriamo */
+.passi{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.passo{background:var(--card);border:1px solid var(--linea);border-radius:22px;padding:26px;position:relative;overflow:hidden}
+.passo .num{font-size:52px;font-weight:300;line-height:1;color:var(--mute)}
+.passo h3{font-size:19px;font-weight:500;margin:14px 0 6px}
+.passo p{color:var(--body);font-size:15.5px}
+.prom{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:1px solid var(--linea);padding-top:24px}
+.prom h3{font-weight:400;font-size:20px}
+.prom p{color:var(--body);font-size:15px;margin-top:6px}
+.chi{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;background:var(--card);border:1px solid var(--linea);border-radius:26px;padding:36px}
+.chi p{color:var(--body);font-size:17.5px;margin-top:12px}
+.duo{display:grid;gap:12px}
+.duo div{display:flex;gap:14px;align-items:center}
+.duo i{width:50px;height:50px;border-radius:50%;flex:none;background:radial-gradient(circle at 30% 30%,var(--pesca),var(--rosa))}
+.duo div:last-child i{background:radial-gradient(circle at 30% 30%,var(--menta),var(--lavanda))}
+.duo span{color:var(--mute)}
+.duo b{display:block;color:var(--ink);font-size:18px}
+/* contatti */
+.contatti{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
+.modulo{background:var(--card);border:1px solid var(--linea);border-radius:24px;padding:28px;display:grid;gap:16px}
+.modulo label,.chips legend{font-size:13.5px;color:var(--mute)}
+.modulo input,.modulo textarea{background:var(--bg);color:var(--ink);border:1px solid transparent;border-radius:14px;padding:12px 15px}
+.modulo textarea{border-radius:20px 20px 6px 20px}
+.modulo input:focus,.modulo textarea:focus{outline:none;border-color:var(--azione)}
+.chip span{display:inline-block;padding:8px 14px;border-radius:999px;font-size:14px;background:var(--bg);border:1px solid transparent}
+.chip.on span{border-color:var(--azione);color:var(--azione)}
+.esito{color:var(--verde);font-size:14.5px}
+.mailbox{color:var(--mute);font-size:14.5px;margin-top:14px}
+.mailbox span{color:var(--ink);user-select:all}
+.faq{background:var(--card);border:1px solid var(--linea);border-radius:22px;overflow:hidden}
+.faq details + details{border-top:1px solid var(--linea)}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 20px;font-size:19px}
+.faq .t{width:24px;height:24px;position:relative;flex:none;color:var(--mute)}
+.faq .t::after{content:"";position:absolute;left:6px;top:5px;width:9px;height:9px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);transition:transform .25s}
+.faq details[open] .t::after{transform:rotate(225deg);top:10px}
+.faq details p{color:var(--body);padding:0 20px 18px;font-size:15.5px}
+/* passo successivo e piede */
+.avanti{display:flex;justify-content:flex-end;padding-block:24px 56px}
+.avanti a{display:inline-flex;flex-direction:column;align-items:flex-end;gap:2px;text-decoration:none;padding:14px 20px;border-radius:18px;background:var(--card);border:1px solid var(--linea)}
+.avanti small{color:var(--mute);font-size:12.5px}
+.avanti span{font-size:20px}
+footer{border-top:1px solid var(--linea);padding-block:26px;color:var(--mute);font-size:13.5px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+@media (max-width:900px){
+  .top .voci{display:none}
+  .apri-menu{display:block}
+  .top .wrap{height:58px}
+  .menu{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--linea);box-shadow:0 24px 40px -30px rgba(0,0,0,.35);padding:8px max(16px,env(safe-area-inset-left,0px)) 18px max(16px,env(safe-area-inset-right,0px))}
+  .menu.aperto{display:grid;animation:scende .22s ease-out both}
+  .menu a{display:flex;justify-content:space-between;align-items:center;text-decoration:none;color:var(--ink);font-size:20px;font-weight:300;padding:14px 6px;border-bottom:1px solid var(--linea)}
+  .menu a:last-child{border-bottom:0}
+  .menu a::after{content:"→";color:var(--mute);font-size:16px}
+  .menu a[aria-current="page"]{color:var(--azione)}
+  .menu a[aria-current="page"]::after{content:"•";color:var(--azione)}
+  .vista{overflow-x:clip}
+  .hero,.contatti,.chi{grid-template-columns:1fr}
+  .hero{padding-block:32px 16px;gap:30px}
+  .sfera{width:70%;right:-10%;top:-8%}
+  .partenze{grid-template-columns:1fr}
+  .metodo,.prom{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  .testa{padding-block:32px 16px}
+  .fiducia{display:none}
+  .azioni .btn{flex:1 1 100%}
+  .conv{box-shadow:0 24px 50px -36px rgba(60,40,90,.4)}
+  .msgs{min-height:330px;padding:16px 12px}.msg{max-width:90%}
+  .scelte{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.scelte::-webkit-scrollbar{display:none}.scelta{flex:none}
+  .metodo,.passi,.prom{grid-template-columns:1fr}
+  .srv .corpo{padding-left:20px}.regole,.modulo,.chi{padding:22px}
+  .invito{padding:22px}
+  .avanti{justify-content:stretch}.avanti a{width:100%}
+}
+
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "@id": "https://quadra-ia.it/#quadra", "name": "Quadra", "url": "https://quadra-ia.it/", "slogan": "Fa quadrare le cose.", "description": "Quadra: assistenti IA su misura, automazioni, siti e app per persone, piccole attività e aziende. Prezzi chiari prima di iniziare, parole semplici, una persona vera che firma ogni lavoro.", "email": "ciao@quadra-ia.it", "areaServed": {"@type": "Country", "name": "Italia"}, "availableLanguage": "it", "founder": {"@type": "Person", "name": "Francesco Fante"}, "knowsAbout": ["Intelligenza artificiale", "Assistenti IA", "Automazioni", "Siti web", "App", "AI Act", "Controllo degli agenti IA", "Visibilità negli assistenti IA"], "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Servizi e prezzi", "itemListElement": [{"@type": "OfferCatalog", "name": "Per persone e piccole attività", "itemListElement": [{"@type": "Offer", "name": "Diagnosi iniziale", "description": "Un'ora insieme per capire il problema. Poi una pagina scritta con la soluzione.", "priceCurrency": "EUR", "url": "https://quadra-ia.it/#s-diagnosi", "priceSpecification": {"@type": "PriceSpecification", "price": "150", "priceCurrency": "EUR", "description": "150 € (senza IVA: prestazione occasionale con ritenuta d'acconto)"}}, {"@type": "Offer", "name": "Assistente su misura", "description": "Un'assistente IA tutta tua, che lavora al posto tuo e ti chiede il permesso.", "priceCurrency": "EUR", "url": "https://quadra-ia.it/#s-assistente", "priceSpecification": {"@type": "PriceSpecification", "price": "900", "priceCurrency": "EUR", "description": "900 € + 149 €/mese (senza IVA: prestazione occasionale con ritenuta d'acconto)"}}, {"@type": "Offer", "name": "Automazioni", "description": "I lavori ripetitivi si fanno da soli. Tu fai il resto.", "priceCurrency": "EUR", "url": "https://quadra-ia.it/#s-automazioni", "priceSpecification": {"@type": "PriceSpecification", "price": "490", "priceCurrency": "EUR", "description": "da 490 € (senza IVA: prestazione occasionale con ritenuta d'acconto)"}}, {"@type": "Offer", "name": "Sito vetrina", "description": "Un sito leggero e chiaro, perfetto sul telefono.", "priceCurrency": "EUR", "url": "https://quadra-ia.it/#s-sito", "priceSpecification": {"@type": "PriceSpecification", "price": "790", "priceCurrency": "EUR", "description": "790 € (senza IVA: prestazione occasionale con ritenuta d'acconto)"}}, {"@type": "Offer", "name": "App su misura", "description": "Prenotazioni, pagamenti, agenda: un'app fatta sul tuo lavoro.", "priceCurrency": "EUR", "url": "https://quadra-ia.it/#s-app"}, {"@type": "Offer", "name": "Lavori extra", "description": "Per tutto quello che non era nel preventivo.", "priceCurrency": "EUR", "url": "https://quadra-ia.it/#s-extra", "priceSpecification": {"@type": "PriceSpecification", "price": "70", "priceCurrency": "EUR", "description": "70 €/ora (senza IVA: prestazione occasionale con ritenuta d'acconto)"}}]}, {"@type": "OfferCatalog", "name": "Per le aziende (PMI PRO)", "itemListElement": [{"@type": "Offer", "name": "Custode degli agenti IA", "description": "Ogni mese mettiamo alla prova l'IA che usate. Vi diciamo cosa sbaglia e come correggerla.", "priceCurrency": "EUR", "url": "https://quadra-ia.it/#s-custode", "priceSpecification": {"@type": "PriceSpecification", "price": "630", "priceCurrency": "EUR", "description": "630 € poi 70 €/mese (senza IVA: prestazione occasionale con ritenuta d'acconto)"}}, {"@type": "Offer", "name": "Memoria aziendale, il lascito", "description": "Quando un collega esperto va in pensione, il suo sapere resta in azienda.", "priceCurrency": "EUR", "url": "https://quadra-ia.it/#s-lascito", "priceSpecification": {"@type": "PriceSpecification", "price": "1500", "priceCurrency": "EUR", "description": "da 1.500 € + 49 €/mese (senza IVA: prestazione occasionale con ritenuta d'acconto)"}}, {"@type": "Offer", "name": "Farsi trovare dagli assistenti IA", "description": "Sempre più persone chiedono a ChatGPT invece che a Google. Facciamo in modo che consigli voi.", "priceCurrency": "EUR", "url": "https://quadra-ia.it/#s-trovare", "priceSpecification": {"@type": "PriceSpecification", "price": "290", "priceCurrency": "EUR", "description": "290 €, poi da 690 € (senza IVA: prestazione occasionale con ritenuta d'acconto)"}}]}]}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Devo capire di tecnologia?", "acceptedAnswer": {"@type": "Answer", "text": "No. Ci parli come a una persona, la parte tecnica la seguiamo noi."}}, {"@type": "Question", "name": "Perché la diagnosi si paga?", "acceptedAnswer": {"@type": "Answer", "text": "Perché è già lavoro vero: esci con una pagina scritta che puoi usare anche senza di noi. Se poi lavoriamo insieme, la togliamo dal prezzo."}}, {"@type": "Question", "name": "Dove finiscono i miei dati?", "acceptedAnswer": {"@type": "Answer", "text": "Solo dove servono al tuo lavoro. Se un servizio passa da fornitori fuori dall'Europa, te lo diciamo prima."}}, {"@type": "Question", "name": "E se il risultato non mi convince?", "acceptedAnswer": {"@type": "Answer", "text": "Ti mostriamo i passaggi mentre lavoriamo: si corregge strada facendo, non alla fine."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Quadra", "url": "https://quadra-ia.it/", "inLanguage": "it"}</script>
+</head>
+<body>
+
+
+<header class="top"><div class="wrap">
+  <a class="marchio" href="#inizio" data-p="inizio"><span class="m"></span>Quadra</a>
+  <nav class="voci" aria-label="Pagine"><a href="#servizi" data-p="servizi">Servizi</a><a href="#aziende" data-p="aziende">Aziende</a><a href="#come" data-p="come">Come lavoriamo</a><a href="#contatti" data-p="contatti">Contatti</a></nav>
+  <div class="dx"><a class="btn btn-primario" href="#contatti">Scrivici</a><button class="apri-menu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Apri il menu"><i></i><i></i><i></i></button></div>
+</div>
+<nav class="menu" id="menu" aria-label="Menu"><a href="#inizio" data-p="inizio">Inizio</a><a href="#servizi" data-p="servizi">Servizi</a><a href="#aziende" data-p="aziende">Aziende</a><a href="#come" data-p="come">Come lavoriamo</a><a href="#contatti" data-p="contatti">Contatti</a></nav></header>
+
+<main class="wrap">
+
+<div class="vista attiva" id="v-inizio">
+  <div class="hero">
+    <div>
+      <h1>Hai un problema? <span>Lo facciamo quadrare.</span></h1>
+      <p class="lead">Assistenti IA, automazioni, siti e app. Ti diciamo prima cosa faremo e quanto costa, con parole semplici.</p>
+      <div class="azioni"><a class="btn btn-primario" href="#contatti">Raccontaci il tuo caso</a><a class="btn btn-sec" href="#servizi">Servizi e prezzi</a></div>
+      <div class="fiducia"><span>Prezzo scritto prima di iniziare</span><span>Niente parte a tuo nome senza il tuo sì</span><span>Una persona vera firma ogni lavoro</span></div>
+    </div>
+    <div class="scena">
+      <div class="sfera" aria-hidden="true"></div>
+      <div class="conv">
+        <div class="barra"><span class="av" aria-hidden="true"></span><p>MAIA, per Quadra<small>ti spiega tutto, con calma</small></p><span class="onda" aria-hidden="true"><i style="--h:8px;--d:0ms"></i><i style="--h:14px;--d:90ms"></i><i style="--h:6px;--d:180ms"></i><i style="--h:18px;--d:270ms"></i><i style="--h:10px;--d:360ms"></i><i style="--h:16px;--d:450ms"></i><i style="--h:7px;--d:540ms"></i><i style="--h:12px;--d:630ms"></i></span></div>
+        <div class="msgs" id="msgs" aria-live="polite"><p class="msg lei">Ho uno studio e rispondo alle mail dei clienti alle undici di sera.</p><p class="msg noi">Capito. È tempo tolto alla tua sera, e il cliente aspetta comunque.</p><p class="msg noi">Un&#x27;assistente su misura legge le mail e ti prepara le risposte nel tuo tono. Tu leggi e premi invia.</p><a class="msg link" href="#s-assistente">Assistente su misura · 900 € + 149 €/mese<span aria-hidden="true"> →</span></a></div>
+        <div class="scelte-box"><p>Tocca la frase che ti somiglia</p><div class="scelte"><button type="button" class="scelta on" data-i="0">Rispondo alle mail la sera</button><button type="button" class="scelta" data-i="1">Uso ChatGPT in azienda</button><button type="button" class="scelta" data-i="2">Mi serve un sito</button><button type="button" class="scelta" data-i="3">Un collega va in pensione</button><button type="button" class="scelta" data-i="4">Non so da dove partire</button></div></div>
+      </div>
+    </div>
+  </div>
+  <section><p class="gruppo-tit">Da dove vuoi partire</p><div class="partenze"><a class="partenza" href="#servizi" style="--g1:var(--menta);--g2:var(--cielo)"><h3>Per te e la tua attività</h3><p>Assistente, automazioni, sito, app. Con i prezzi.</p><span>Apri →</span></a><a class="partenza" href="#aziende" style="--g1:var(--lavanda);--g2:var(--rosa)"><h3>Per le aziende</h3><p>IA sotto controllo, memoria aziendale, regole nuove spiegate semplici.</p><span>Apri →</span></a><a class="partenza" href="#come" style="--g1:var(--pesca);--g2:var(--lavanda)"><h3>Come lavoriamo</h3><p>Tre passi, quattro promesse, e chi c&#x27;è dietro.</p><span>Apri →</span></a></div></section>
+  <div class="avanti"><a href="#servizi"><small>Avanti</small><span>Servizi e prezzi →</span></a></div>
+</div>
+
+<div class="vista" id="v-servizi">
+  <div class="testa"><p class="occhiello">Servizi e prezzi</p><h1>Cosa facciamo, e quanto costa.</h1><p>Tocca una riga: si apre cosa comprende, cosa no e per chi è.</p></div>
+  <section><p class="gruppo-tit">Per persone e piccole attività</p><div class="gruppo"><details class="srv" style="--c:var(--menta)" id="s-diagnosi"><summary><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span class="n">Diagnosi iniziale</span><span class="r">Un&#x27;ora insieme per capire il problema. Poi una pagina scritta con la soluzione.</span><span class="p">150 €</span><span class="t" aria-hidden="true"></span></summary>
+<div class="corpo"><p class="nota">90 € per i primi 5 clienti. Se poi lavoriamo insieme, la togliamo dal prezzo.</p><div class="si"><h4>Cosa comprende</h4><ul><li>Un&#x27;ora di chiacchierata, di persona o in video</li><li>Una relazione scritta: cosa fare, quanto costa, quanto tempo serve</li></ul></div><div class="no"><h4>Cosa non comprende</h4><ul><li>Il lavoro vero e proprio, che si decide dopo</li></ul></div><div class="pc"><h4>Per chi è</h4><p>Per chi vuole capire prima di spendere.</p></div></div></details><details class="srv" style="--c:var(--lavanda)" id="s-assistente"><summary><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.6 7.1L4 20l1.4-4.1A8 8 0 1 1 20 11.5z"/></svg><span class="n">Assistente su misura</span><span class="r">Un&#x27;assistente IA tutta tua, che lavora al posto tuo e ti chiede il permesso.</span><span class="p">900 € + 149 €/mese</span><span class="t" aria-hidden="true"></span></summary>
+<div class="corpo"><p class="nota">L&#x27;avvio è gratis se resti con noi 12 mesi.</p><div class="si"><h4>Cosa comprende</h4><ul><li>Risponde alle mail dei clienti nel tuo tono, con l&#x27;informativa privacy dalla prima mail</li><li>Chat sul telefono, anche a voce: ricorda persone, scadenze, cose dette</li><li>Se vuoi, comanda la casa: luci, tapparelle, Home Assistant</li><li>Tiene in ordine l&#x27;archivio e ritrova le cose con una domanda</li></ul></div><div class="no"><h4>Cosa non comprende</h4><ul><li>Invii a tuo nome senza il tuo sì</li><li>Il costo di eventuali abbonamenti tuoi a servizi esterni</li></ul></div><div class="pc"><h4>Per chi è</h4><p>Per professionisti, piccole attività e famiglie con poco tempo.</p></div></div></details><details class="srv" style="--c:var(--pesca)" id="s-automazioni"><summary><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/></svg><span class="n">Automazioni</span><span class="r">I lavori ripetitivi si fanno da soli. Tu fai il resto.</span><span class="p">da 490 €</span><span class="t" aria-hidden="true"></span></summary>
+<div class="corpo"><p class="nota">Quelle con più passaggi 1.200-2.500 €. Se girano sul nostro server, 30-50 €/mese.</p><div class="si"><h4>Cosa comprende</h4><ul><li>Mail che si smistano da sole</li><li>Documenti e preventivi che si compilano</li><li>Promemoria e prenotazioni automatiche</li></ul></div><div class="no"><h4>Cosa non comprende</h4><ul><li>Licenze di programmi a pagamento che già usi</li></ul></div><div class="pc"><h4>Per chi è</h4><p>Per chi fa ogni giorno le stesse cose a mano.</p></div></div></details><details class="srv" style="--c:var(--cielo)" id="s-sito"><summary><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 8.5h18M7 6.3h.01M9.5 6.3h.01"/></svg><span class="n">Sito vetrina</span><span class="r">Un sito leggero e chiaro, perfetto sul telefono.</span><span class="p">790 €</span><span class="t" aria-hidden="true"></span></summary>
+<div class="corpo"><p class="nota">490 € per i primi 5 clienti, in cambio di una recensione. Cura mensile: 79 €/mese.</p><div class="si"><h4>Cosa comprende</h4><ul><li>Progetto, testi chiari e foto sistemate</li><li>Modulo contatti e testi su privacy e cookie</li><li>Pubblicazione e prime correzioni</li></ul></div><div class="no"><h4>Cosa non comprende</h4><ul><li>Dominio e hosting, di solito 10-50 € l&#x27;anno</li><li>Negozio online con pagamenti, a preventivo</li></ul></div><div class="pc"><h4>Per chi è</h4><p>Per chi deve farsi trovare e farsi capire.</p></div></div></details><details class="srv" style="--c:var(--rosa)" id="s-app"><summary><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/><path d="m9 15 2 2 4-4"/></svg><span class="n">App su misura</span><span class="r">Prenotazioni, pagamenti, agenda: un&#x27;app fatta sul tuo lavoro.</span><span class="p">a preventivo</span><span class="t" aria-hidden="true"></span></summary>
+<div class="corpo"><p class="nota">Dopo la diagnosi ricevi le ore stimate per iscritto.</p><div class="si"><h4>Cosa comprende</h4><ul><li>I clienti prenotano e pagano dal telefono</li><li>Tu vedi l&#x27;agenda e sposti con un dito</li><li>Promemoria automatici</li></ul></div><div class="no"><h4>Cosa non comprende</h4><ul><li>Costi delle piattaforme di pagamento</li></ul></div><div class="pc"><h4>Per chi è</h4><p>Per studi e attività che vivono di appuntamenti.</p></div></div></details><details class="srv" style="--c:var(--menta)" id="s-extra"><summary><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span class="n">Lavori extra</span><span class="r">Per tutto quello che non era nel preventivo.</span><span class="p">70 €/ora</span><span class="t" aria-hidden="true"></span></summary>
+<div class="corpo"><p class="nota">Te lo diciamo prima di farlo, mai dopo.</p><div class="si"><h4>Cosa comprende</h4><ul><li>Modifiche e richieste nuove</li><li>Assistenza fuori dalla cura mensile</li></ul></div><div class="no"><h4>Cosa non comprende</h4><ul><li>Niente che tu non abbia approvato</li></ul></div><div class="pc"><h4>Per chi è</h4><p>Per chi è già nostro cliente.</p></div></div></details></div><p class="fisco">I prezzi sono quelli che paghi: niente IVA. Per ora lavoro con prestazione occasionale e ritenuta d&#x27;acconto.</p>
+  <div class="invito"><div><h3>Non sai quale scegliere?</h3><p>Parti dalla diagnosi: un'ora insieme e una pagina con la soluzione.</p></div><a class="btn btn-primario" href="#contatti">Prenota la diagnosi</a></div></section>
+  <div class="avanti"><a href="#aziende"><small>Avanti</small><span>Per le aziende →</span></a></div>
+</div>
+
+<div class="vista" id="v-aziende">
+  <div class="testa"><p class="occhiello">PMI PRO</p><h1>Per le aziende che usano l'IA.</h1><p>Per le aziende con dipendenti che usano già l&#x27;IA, o stanno per farlo.</p></div>
+  <section><div class="regole"><h3>Le regole sull&#x27;IA, in parole semplici</h3><p class="rr">Ci sono leggi nuove e quasi nessuno le conosce. Ecco cosa cambia per te.</p><ol><li><span class="q">Da febbraio 2025</span><p>Chi usa l&#x27;IA al lavoro deve formare le persone che la usano.</p><small>AI Act, articolo 4</small></li><li><span class="q">Da agosto 2026</span><p>Un chatbot deve dire chiaramente che è una macchina.</p><small>AI Act, articolo 50</small></li><li><span class="q">In Italia, legge 132/2025</span><p>I professionisti devono dire ai clienti quando usano l&#x27;IA. I datori di lavoro devono informare i dipendenti.</p><small>articoli 11 e 13</small></li></ol><p class="rf">Le multe possono essere alte. Ti aiutiamo a essere in regola, senza complicazioni.</p><p class="rn">Questa è informazione, non consulenza legale: per i casi dubbi serve un avvocato.</p></div></section>
+  <section><p class="gruppo-tit">Servizi per le aziende</p><div class="gruppo"><details class="srv" style="--c:var(--lavanda)" id="s-custode"><summary><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7.5-3.5 7.5-9.5V5.5L12 3 4.5 5.5v6C4.5 17.5 12 21 12 21z"/><path d="m9 12 2 2 4-4"/></svg><span class="n">Custode degli agenti IA</span><span class="r">Ogni mese mettiamo alla prova l&#x27;IA che usate. Vi diciamo cosa sbaglia e come correggerla.</span><span class="p">630 € poi 70 €/mese</span><span class="t" aria-hidden="true"></span></summary>
+<div class="corpo"><p class="nota">Check-up iniziale 630 €. Poi 70 €/mese (base) o 140 €/mese (esteso).</p><div class="si"><h4>Cosa comprende</h4><ul><li>50-100 domande di prova in italiano, ripetute ogni mese</li><li>Controlliamo che non inventi, non prometta, non faccia uscire dati e dica di essere un&#x27;IA</li><li>Una pagina al mese con il semaforo e cosa correggere</li><li>Formazione breve per chi la usa, come chiede la legge</li></ul></div><div class="no"><h4>Cosa non comprende</h4><ul><li>Pareri legali o certificati di conformità</li><li>Modificare l&#x27;IA: diciamo cosa correggere, lo fa il vostro fornitore</li></ul></div><div class="pc"><h4>Per chi è</h4><p>Per studi e aziende che hanno un chatbot o usano ChatGPT, Claude, Gemini al lavoro.</p></div></div></details><details class="srv" style="--c:var(--pesca)" id="s-lascito"><summary><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H20v15.5H5.5A1.5 1.5 0 0 0 4 20z"/><path d="M4 20a1.5 1.5 0 0 0 1.5 1.5H20M8.5 7.5h7"/></svg><span class="n">Memoria aziendale, il lascito</span><span class="r">Quando un collega esperto va in pensione, il suo sapere resta in azienda.</span><span class="p">da 1.500 € + 49 €/mese</span><span class="t" aria-hidden="true"></span></summary>
+<div class="corpo"><p class="nota">Per una persona. I 49 €/mese tengono la memoria aggiornata.</p><div class="si"><h4>Cosa comprende</h4><ul><li>Interviste, documenti e casi tipici raccolti con calma</li><li>Un&#x27;assistente interna che risponde ai colleghi come lui</li><li>Tutto resta vostro, con una copia cifrata</li></ul></div><div class="no"><h4>Cosa non comprende</h4><ul><li>Dati personali che non servono al lavoro</li></ul></div><div class="pc"><h4>Per chi è</h4><p>Per aziende dove una persona sa cose che nessun altro sa.</p></div></div></details><details class="srv" style="--c:var(--cielo)" id="s-trovare"><summary><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><path d="M12 12l5-5"/></svg><span class="n">Farsi trovare dagli assistenti IA</span><span class="r">Sempre più persone chiedono a ChatGPT invece che a Google. Facciamo in modo che consigli voi.</span><span class="p">290 €, poi da 690 €</span><span class="t" aria-hidden="true"></span></summary>
+<div class="corpo"><p class="nota">Check-up 290 €. Sistemazione da 690 €.</p><div class="si"><h4>Cosa comprende</h4><ul><li>Controlliamo cosa dicono di voi ChatGPT, Gemini e simili</li><li>Sistemiamo sito, scheda Google e testi</li></ul></div><div class="no"><h4>Cosa non comprende</h4><ul><li>Pubblicità a pagamento</li><li>Garanzie di primo posto: nessuno può darle onestamente</li></ul></div><div class="pc"><h4>Per chi è</h4><p>Per attività che vivono di clienti nuovi.</p></div></div></details></div><p class="fisco">I prezzi sono quelli che paghi: niente IVA. Per ora lavoro con prestazione occasionale e ritenuta d&#x27;acconto.</p></section>
+  <section><div class="titoletto"><h2>Come controlliamo un&#x27;IA</h2><p>Nessuna magia: un metodo semplice, ripetuto ogni mese.</p></div><div class="metodo"><div><span class="num" style="--c:var(--menta)">1</span><h3>Regole scritte insieme</h3><p>In una pagina: cosa la vostra IA può dire e cosa no.</p></div><div><span class="num" style="--c:var(--lavanda)">2</span><h3>Domande di prova</h3><p>50-100 domande in italiano, le stesse ogni mese, per vedere se peggiora.</p></div><div><span class="num" style="--c:var(--pesca)">3</span><h3>Conversazioni vere</h3><p>Solo nel pacchetto esteso: circa 20 al mese, con un contratto per la privacy.</p></div><div><span class="num" style="--c:var(--cielo)">4</span><h3>Una pagina di rapporto</h3><p>Verde, giallo o rosso per ogni voce, e cosa correggere.</p></div></div></section>
+  <div class="avanti"><a href="#come"><small>Avanti</small><span>Come lavoriamo →</span></a></div>
+</div>
+
+<div class="vista" id="v-come">
+  <div class="testa"><p class="occhiello">Come lavoriamo</p><h1>Tre passi, senza sorprese.</h1></div>
+  <section><div class="passi"><div class="passo"><span class="num">1</span><h3>Ci racconti</h3><p>Due righe con parole tue. Le domande giuste le facciamo noi.</p></div><div class="passo"><span class="num">2</span><h3>Ti proponiamo</h3><p>Una proposta scritta: cosa, quanto, in quanto tempo.</p></div><div class="passo"><span class="num">3</span><h3>Lo facciamo insieme</h3><p>Vedi il lavoro mentre nasce. Alla fine resta tuo.</p></div></div></section>
+  <section><div class="prom"><div><h3>Decidi sempre tu</h3><p>Niente parte a tuo nome senza il tuo sì.</p></div><div><h3>Trasparenza</h3><p>Ti diciamo dove lavora l&#x27;IA e dove lavoriamo noi.</p></div><div><h3>I tuoi dati</h3><p>Servono solo al tuo lavoro. Informativa dalla prima mail.</p></div><div><h3>Nessun vincolo</h3><p>I canoni mensili si disdicono quando vuoi.</p></div></div></section>
+  <section><div class="chi"><div><h2>Francesco e MAIA</h2><p>Quadra è Francesco Fante, con MAIA: l&#x27;assistente IA che ha costruito e usa ogni giorno. Tutto quello che trovi qui l&#x27;abbiamo provato prima su di noi.</p></div><div class="duo"><div><i></i><span><b>Francesco</b>ascolta, controlla, firma</span></div><div><i></i><span><b>MAIA</b>prepara, ricorda, cerca</span></div></div></div></section>
+  <div class="avanti"><a href="#contatti"><small>Avanti</small><span>Contatti →</span></a></div>
+</div>
+
+<div class="vista" id="v-contatti">
+  <div class="testa"><p class="occhiello">Contatti</p><h1>Raccontaci il tuo caso.</h1><p>Anche in poche righe. Ti rispondiamo per iscritto, con calma e attenzione.</p></div>
+  <section class="contatti">
+    <div><form class="modulo" id="modulo" novalidate>
+  <div class="due"><div class="campo"><label for="f-nome">Come ti chiami</label><input id="f-nome" name="nome" autocomplete="name"></div>
+  <div class="campo"><label for="f-mail">La tua mail</label><input id="f-mail" name="mail" type="email" autocomplete="email"></div></div>
+  <fieldset class="chips"><legend>Di cosa si tratta</legend><label class="chip"><input type="checkbox" name="area" value="Mail e clienti"><span>Mail e clienti</span></label><label class="chip"><input type="checkbox" name="area" value="Assistente"><span>Assistente</span></label><label class="chip"><input type="checkbox" name="area" value="Automazioni"><span>Automazioni</span></label><label class="chip"><input type="checkbox" name="area" value="Sito o app"><span>Sito o app</span></label><label class="chip"><input type="checkbox" name="area" value="Azienda e IA"><span>Azienda e IA</span></label><label class="chip"><input type="checkbox" name="area" value="Altro"><span>Altro</span></label></fieldset>
+  <div class="campo"><label for="f-testo">Il problema, con parole tue</label><textarea id="f-testo" name="testo"></textarea></div>
+  <div class="invio"><button type="submit" class="btn btn-primario">Invia</button><p class="esito" id="esito" role="status" aria-live="polite"></p></div>
+</form><p class="mailbox">Oppure scrivici a <span>ciao@quadra-ia.it</span> (indirizzo da attivare)</p></div>
+    <div><p class="gruppo-tit">Prima di scriverci</p><div class="faq"><details><summary><span>Devo capire di tecnologia?</span><span class="t" aria-hidden="true"></span></summary><p>No. Ci parli come a una persona, la parte tecnica la seguiamo noi.</p></details><details><summary><span>Perché la diagnosi si paga?</span><span class="t" aria-hidden="true"></span></summary><p>Perché è già lavoro vero: esci con una pagina scritta che puoi usare anche senza di noi. Se poi lavoriamo insieme, la togliamo dal prezzo.</p></details><details><summary><span>Dove finiscono i miei dati?</span><span class="t" aria-hidden="true"></span></summary><p>Solo dove servono al tuo lavoro. Se un servizio passa da fornitori fuori dall&#x27;Europa, te lo diciamo prima.</p></details><details><summary><span>E se il risultato non mi convince?</span><span class="t" aria-hidden="true"></span></summary><p>Ti mostriamo i passaggi mentre lavoriamo: si corregge strada facendo, non alla fine.</p></details></div></div>
+  </section>
+  <div style="height:48px"></div>
+</div>
+
+</main>
+<footer><div class="wrap"><span>Quadra · Francesco Fante · C.F. da inserire</span><span>Fa quadrare le cose.</span></div></footer>
+<script>
+(function(){
+  var T={"inizio": "Quadra", "servizi": "Servizi e prezzi · Quadra", "aziende": "Per le aziende · Quadra", "come": "Come lavoriamo · Quadra", "contatti": "Contatti · Quadra"}, VALIDE=['inizio','servizi','aziende','come','contatti'];
+  var bm=document.querySelector('.apri-menu'), pm=document.getElementById('menu');
+  function chiudi(){ if(!bm) return; bm.setAttribute('aria-expanded','false'); bm.setAttribute('aria-label','Apri il menu'); pm.classList.remove('aperto'); }
+  if(bm){
+    bm.addEventListener('click',function(){ var on=bm.getAttribute('aria-expanded')!=='true'; bm.setAttribute('aria-expanded',on?'true':'false'); bm.setAttribute('aria-label',on?'Chiudi il menu':'Apri il menu'); pm.classList.toggle('aperto',on); });
+    document.addEventListener('keydown',function(ev){ if(ev.key==='Escape') chiudi(); });
+    document.addEventListener('click',function(ev){ if(!ev.target.closest('header.top')) chiudi(); });
+    window.matchMedia('(min-width:901px)').addEventListener('change',chiudi);
+  }
+  function mostra(id, apri){
+    chiudi();
+    if(VALIDE.indexOf(id)<0) id='inizio';
+    document.querySelectorAll('.vista').forEach(function(v){ v.classList.toggle('attiva', v.id==='v-'+id); });
+    document.querySelectorAll('[data-p]').forEach(function(a){ if(a.dataset.p===id) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+    document.title=T[id]||'Quadra';
+    if(apri){ var d=document.getElementById(apri); if(d){ d.open=true; setTimeout(function(){ d.scrollIntoView({behavior:'smooth',block:'center'}); },60); return; } }
+    window.scrollTo(0,0);
+  }
+  function daHash(){
+    var h=(location.hash||'').slice(1);
+    if(h.indexOf('s-')===0){ var d=document.getElementById(h); var v=d&&d.closest('.vista'); mostra(v?v.id.slice(2):'servizi', h); }
+    else mostra(h||'inizio');
+  }
+  window.addEventListener('hashchange',daHash); daHash();
+  document.addEventListener('click',function(ev){ var a=ev.target.closest('a[href^="#"]'); if(a && a.getAttribute('href')===location.hash){ daHash(); } });
+  var f=document.getElementById('modulo');
+  if(f){
+    f.addEventListener('submit',function(ev){ev.preventDefault();document.getElementById('esito').textContent="Grazie. Questa \u00e8 una bozza: il modulo non invia ancora nulla.";});
+    f.querySelectorAll('.chip input').forEach(function(c){c.addEventListener('change',function(){c.parentNode.classList.toggle('on',c.checked);});});
+  }
+  var C=[{"chip": "Rispondo alle mail la sera", "lei": "Ho uno studio e rispondo alle mail dei clienti alle undici di sera.", "noi": ["Capito. È tempo tolto alla tua sera, e il cliente aspetta comunque.", "Un'assistente su misura legge le mail e ti prepara le risposte nel tuo tono. Tu leggi e premi invia."], "id": "assistente", "nome": "Assistente su misura", "prezzo": "900 € + 149 €/mese"}, {"chip": "Uso ChatGPT in azienda", "lei": "In ufficio usiamo ChatGPT. Possiamo fidarci?", "noi": ["Domanda giusta. A volte inventa, e ci sono leggi nuove che quasi nessuno conosce.", "Il Custode lo mette alla prova ogni mese e vi consegna una pagina con cosa correggere."], "id": "custode", "nome": "Custode degli agenti IA", "prezzo": "630 € poi 70 €/mese"}, {"chip": "Mi serve un sito", "lei": "Mi serve un sito, ma non voglio una cosa complicata.", "noi": ["Allora facciamolo leggero: poche pagine chiare, perfette sul telefono.", "Sito vetrina, 790 €. Per i primi 5 clienti 490 €."], "id": "sito", "nome": "Sito vetrina", "prezzo": "790 €"}, {"chip": "Un collega va in pensione", "lei": "Il nostro tecnico va in pensione e sa tutto lui.", "noi": ["Succede spesso, ed è un rischio vero per l'azienda.", "Con il lascito raccogliamo il suo sapere in un'assistente che risponde ai colleghi."], "id": "lascito", "nome": "Memoria aziendale, il lascito", "prezzo": "da 1.500 € + 49 €/mese"}, {"chip": "Non so da dove partire", "lei": "Ho un problema ma non so nemmeno come spiegarlo.", "noi": ["Va benissimo così. Spiegarlo è il nostro lavoro.", "Partiamo dalla diagnosi: un'ora insieme e una pagina scritta con la soluzione."], "id": "diagnosi", "nome": "Diagnosi iniziale", "prezzo": "150 €"}], box=document.getElementById('msgs'), scelte=document.querySelectorAll('.scelta'), gira=0;
+  if(box&&scelte.length){
+    var rid=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function el(cls,txt,tag){ var p=document.createElement(tag||'p'); p.className='msg '+cls; p.textContent=txt; return p; }
+    function dici(i){
+      var c=C[i], mio=++gira; box.innerHTML='';
+      scelte.forEach(function(b){ b.classList.toggle('on', +b.dataset.i===i); });
+      var passi=[[function(){ box.appendChild(el('lei',c.lei)); },500]];
+      c.noi.forEach(function(t){ passi.push([function(){ var d=el('noi scrive',''); d.innerHTML='<i></i><i></i><i></i>'; box.appendChild(d); return d; },900]); passi.push([function(prev){ prev.className='msg noi'; prev.textContent=t; },350]); });
+      passi.push([function(){ var a=el('link',c.nome+' · '+c.prezzo,'a'); a.href='#s-'+c.id; var s=document.createElement('span'); s.textContent=' →'; s.setAttribute('aria-hidden','true'); a.appendChild(s); box.appendChild(a); },0]);
+      var k=0, prev=null;
+      (function avanti(){ if(mio!==gira||k>=passi.length) return; var p=passi[k]; prev=p[0](prev)||prev; k++; setTimeout(avanti, rid?0:p[1]); })();
+    }
+    scelte.forEach(function(b){ b.addEventListener('click',function(){ dici(+b.dataset.i); }); });
+  }
+})();
+</script>
+</body>
+</html>
