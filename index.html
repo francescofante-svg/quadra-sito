@@ -395,13 +395,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
       var mail=f.mail.value.trim(), testo=f.testo.value.trim();
       if(!mail||mail.indexOf('@')<1||!testo){ es.style.color=''; es.textContent="Scrivi la tua mail e due righe sul problema, cos\u00ec possiamo risponderti."; return; }
       var aree=[].map.call(f.querySelectorAll('.chip input:checked'),function(c){return c.value;}).join(', ');
-      bt.disabled=true; es.textContent='Invio in corso…';
+      bt.disabled=true; es.style.color='inherit'; es.textContent='Invio in corso…';
       fetch('https://formsubmit.co/ajax/'+"ciao@quadra-ia.it",{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify({_subject:'[Richiesta dal sito] '+(f.nome.value.trim()||mail),_template:'table',_captcha:'false',nome:f.nome.value.trim(),email:mail,argomento:aree||'non indicato',messaggio:testo,_honey:f._honey?f._honey.value:''})})
       .then(function(r){return r.json();}).then(function(j){
-        if(j && (j.success===true||j.success==='true')){ es.textContent="Grazie, abbiamo ricevuto il tuo messaggio. Ti rispondiamo per mail."; f.reset(); f.querySelectorAll('.chip.on').forEach(function(c){c.classList.remove('on');}); }
+        if(j && (j.success===true||j.success==='true')){ es.style.color=''; es.textContent="Grazie, abbiamo ricevuto il tuo messaggio. Ti rispondiamo per mail."; f.reset(); f.querySelectorAll('.chip.on').forEach(function(c){c.classList.remove('on');}); }
         else throw 0;
-      }).catch(function(){ es.textContent="Non siamo riusciti a inviare il messaggio. Scrivici direttamente a "+"ciao@quadra-ia.it"+'.'; }).then(function(){ bt.disabled=false; });
+      }).catch(function(){ es.style.color='inherit'; es.textContent="Non siamo riusciti a inviare il messaggio. Scrivici direttamente a "+"ciao@quadra-ia.it"+'.'; }).then(function(){ bt.disabled=false; });
     });
     f.querySelectorAll('.chip input').forEach(function(c){c.addEventListener('change',function(){c.parentNode.classList.toggle('on',c.checked);});});
   }
