@@ -396,7 +396,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
       if(!mail||mail.indexOf('@')<1||!testo){ es.style.color=''; es.textContent="Scrivi la tua mail e due righe sul problema, cos\u00ec possiamo risponderti."; return; }
       var aree=[].map.call(f.querySelectorAll('.chip input:checked'),function(c){return c.value;}).join(', ');
       bt.disabled=true; es.style.color='inherit'; es.textContent='Invio in corso…';
-      fetch('https://formsubmit.co/ajax/'+"ciao@quadra-ia.it",{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      fetch('https://formsubmit.co/ajax/'+"c6223c6c172341c0b728bf7fc959ddfa",{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify({_subject:'[Richiesta dal sito] '+(f.nome.value.trim()||mail),_template:'table',_captcha:'false',nome:f.nome.value.trim(),email:mail,argomento:aree||'non indicato',messaggio:testo,_honey:f._honey?f._honey.value:''})})
       .then(function(r){return r.json();}).then(function(j){
         if(j && (j.success===true||j.success==='true')){ es.style.color=''; es.textContent="Grazie, abbiamo ricevuto il tuo messaggio. Ti rispondiamo per mail."; f.reset(); f.querySelectorAll('.chip.on').forEach(function(c){c.classList.remove('on');}); }
