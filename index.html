@@ -413,12 +413,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 
 <div class="vista" id="v-privacy">
   <div class="testa"><p class="occhiello">Privacy e cookie</p><h1>Come usiamo i tuoi dati.</h1><p>Ultimo aggiornamento: 16 novembre 2026.</p></div>
-  <section><div class="prom"><div><h3>Chi tratta i dati</h3><p>Francesco Fante, per Quadra, codice fiscale FNTFNC86R09G224N. Per qualsiasi domanda: ciao@quadra-ia.it.</p></div><div><h3>Cosa raccogliamo e perché</h3><p>Dal modulo e dalle mail: nome, indirizzo mail, argomento e messaggio. Servono solo per risponderti e, se lo chiedi, prepararti un preventivo. Non li vendiamo e non li usiamo per pubblicità.</p></div><div><h3>Per quanto tempo</h3><p>Finché serve per la tua richiesta, e al massimo 24 mesi se non diventi cliente. Se diventi cliente, i documenti fiscali si conservano per il tempo previsto dalla legge, di solito 10 anni.</p></div><div><h3>Chi ci aiuta</h3><p>FormSubmit invia i messaggi del modulo, ImprovMX inoltra la posta, Google gestisce la casella di posta, GitHub ospita il sito e registra dati tecnici come l&#x27;indirizzo IP per sicurezza. Alcuni hanno sede negli Stati Uniti: il trasferimento avviene con le garanzie previste dal GDPR.</p></div><div><h3>Cookie</h3><p>Il sito non usa cookie di statistica o di profilazione. Il carattere del sito è sul nostro server, quindi visitare le pagine non manda dati a Google o ad altri.</p></div><div><h3>Intelligenza artificiale</h3><p>Le risposte alle richieste possono essere preparate con l&#x27;aiuto di un assistente IA, sempre sotto il controllo di Francesco, che firma ogni lavoro.</p></div><div><h3>I tuoi diritti</h3><p>Puoi chiedere di vedere, correggere o cancellare i tuoi dati, limitarne l&#x27;uso, opporti o riceverli in un file: basta scrivere a ciao@quadra-ia.it. Puoi anche fare reclamo al Garante per la protezione dei dati personali, garanteprivacy.it.</p></div></div></section>
+  <section><div class="prom"><div><h3>Chi tratta i dati</h3><p>Francesco Fante, per Quadra, codice fiscale FNTFNC86R09G224N. Per qualsiasi domanda: ciao@quadra-ia.it.</p></div><div><h3>Cosa raccogliamo e perché</h3><p>Dal modulo e dalle mail: nome, indirizzo mail, argomento e messaggio. Servono solo per risponderti e, se lo chiedi, prepararti un preventivo. Non li vendiamo e non li usiamo per pubblicità.</p></div><div><h3>Per quanto tempo</h3><p>Finché serve per la tua richiesta, e al massimo 24 mesi se non diventi cliente. Se diventi cliente, i documenti fiscali si conservano per il tempo previsto dalla legge, di solito 10 anni.</p></div><div><h3>Chi ci aiuta</h3><p>FormSubmit invia i messaggi del modulo, ImprovMX inoltra la posta, Google gestisce la casella di posta, GitHub ospita il sito e registra dati tecnici come l&#x27;indirizzo IP per sicurezza. Alcuni hanno sede negli Stati Uniti: il trasferimento avviene con le garanzie previste dal GDPR.</p></div><div><h3>Cookie</h3><p>Il sito ricorda nel tuo browser solo la scelta che fai sul banner. Se premi «Accetta», usiamo Google Analytics per contare le visite e capire, a gruppi, da dove arrivano le persone e cosa interessa, comprese fasce d&#x27;età e interessi: è profilazione, e per questo serve il tuo consenso. I cookie di Google Analytics durano fino a 14 mesi. Se rifiuti o chiudi il banner, non si carica nulla. Puoi cambiare idea quando vuoi da «Preferenze cookie», in fondo alla pagina.</p></div><div><h3>Intelligenza artificiale</h3><p>Le risposte alle richieste possono essere preparate con l&#x27;aiuto di un assistente IA, sempre sotto il controllo di Francesco, che firma ogni lavoro.</p></div><div><h3>I tuoi diritti</h3><p>Puoi chiedere di vedere, correggere o cancellare i tuoi dati, limitarne l&#x27;uso, opporti o riceverli in un file: basta scrivere a ciao@quadra-ia.it. Puoi anche fare reclamo al Garante per la protezione dei dati personali, garanteprivacy.it.</p></div></div></section>
   <div style="height:48px"></div>
 </div>
 
 </main>
-<footer><div class="wrap"><span>Quadra · Francesco Fante · C.F. FNTFNC86R09G224N · Veneto e Lombardia</span><span class="piede-link"><a href="#privacy">Privacy e cookie</a></span><span>Fa quadrare le cose.</span></div></footer>
+<footer><div class="wrap"><span>Quadra · Francesco Fante · C.F. FNTFNC86R09G224N · Veneto e Lombardia</span><span class="piede-link"><a href="#privacy">Privacy e cookie</a><button type="button" class="pref-cookie">Preferenze cookie</button></span><span>Fa quadrare le cose.</span></div></footer>
 <script>
 (function(){
   var T={"privacy": "Privacy e cookie · Quadra", "inizio": "Quadra · Assistenti IA e automazioni in Veneto e Lombardia", "servizi": "Servizi e prezzi · Quadra", "aziende": "Per le aziende · Quadra", "come": "Come lavoriamo · Quadra", "contatti": "Contatti · Quadra"}, VALIDE=['inizio','servizi','aziende','come','contatti','privacy'];
@@ -479,6 +479,44 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
     }
     scelte.forEach(function(b){ b.addEventListener('click',function(){ dici(+b.dataset.i); }); });
   }
+})();
+</script><style>
+.consenso{position:fixed;left:16px;right:16px;bottom:16px;z-index:50;max-width:560px;margin:0 auto;background:var(--card);color:var(--ink);border:1px solid var(--linea);border-radius:20px;padding:20px 22px;box-shadow:0 10px 40px rgba(0,0,0,.12);font:400 15px/1.5 var(--sans)}
+.consenso[hidden]{display:none}
+.consenso p{margin:0 28px 14px 0;color:var(--body)}
+.consenso p a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.consenso .scelte-c{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.consenso .btn{width:100%}
+.consenso .chiudi{position:absolute;top:10px;right:12px;width:36px;height:36px;border:0;background:none;color:var(--mute);font:300 26px/1 var(--sans);cursor:pointer;border-radius:50%}
+.consenso .chiudi:focus-visible,.consenso .btn:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+</style><div class="consenso" id="consenso" role="dialog" aria-label="Cookie" hidden>
+<button type="button" class="chiudi" data-c="no" aria-label="Chiudi e rifiuta">×</button>
+<p>Usiamo Google Analytics, con statistiche e profilazione, solo se accetti. Ci aiuta a capire come viene usato il sito. <a href="#privacy">Privacy e cookie</a></p>
+<div class="scelte-c"><button type="button" class="btn btn-sec" data-c="no">Rifiuta</button><button type="button" class="btn btn-sec" data-c="si">Accetta</button></div>
+</div>
+<script>
+(function(){
+  var ID="G-34RVPRPD9N", K='quadra-consenso', SEI_MESI=182*24*3600*1000;
+  var b=document.getElementById('consenso');
+  function leggi(){ try{ var v=JSON.parse(localStorage.getItem(K)||'null'); if(v && (Date.now()-v.t)<SEI_MESI) return v.s; }catch(e){} return null; }
+  function salva(x){ try{ localStorage.setItem(K, JSON.stringify({s:x,t:Date.now()})); }catch(e){} }
+  var caricato=false;
+  function avvia(){
+    if(caricato) return; caricato=true;
+    window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);};
+    gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'granted'});
+    gtag('js',new Date()); gtag('config',ID);
+    var sc=document.createElement('script'); sc.async=true; sc.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(ID); document.head.appendChild(sc);
+  }
+  function togli(){
+    if(window.gtag) gtag('consent','update',{analytics_storage:'denied'});
+    document.cookie.split(';').forEach(function(c){ var n=c.split('=')[0].trim(); if(n.indexOf('_ga')===0){ ['', '.quadra-ia.it', 'quadra-ia.it'].forEach(function(d){ document.cookie=n+'=; Max-Age=0; path=/'+(d?'; domain='+d:''); }); } });
+  }
+  function scegli(x){ salva(x); b.hidden=true; if(x==='si') avvia(); else { togli(); if(caricato) location.reload(); } }
+  b.addEventListener('click',function(ev){ var t=ev.target.closest('[data-c]'); if(t) scegli(t.dataset.c); });
+  document.addEventListener('keydown',function(ev){ if(ev.key==='Escape' && !b.hidden) scegli('no'); });
+  document.querySelectorAll('.pref-cookie').forEach(function(x){ x.addEventListener('click',function(){ b.hidden=false; b.querySelector('[data-c="si"]').focus(); }); });
+  var s=leggi(); if(s==='si') avvia(); else if(s===null) b.hidden=false;
 })();
 </script>
 </body>
