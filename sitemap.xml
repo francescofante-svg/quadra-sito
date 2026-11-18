@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://quadra-ia.it/</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://quadra-ia.it/servizi/</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://quadra-ia.it/aziende/</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://quadra-ia.it/come-lavoriamo/</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://quadra-ia.it/contatti/</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://quadra-ia.it/privacy/</loc><changefreq>monthly</changefreq></url>
 </urlset>

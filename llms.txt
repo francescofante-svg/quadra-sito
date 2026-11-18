@@ -38,7 +38,9 @@ Importi non soggetti a IVA.
 - E se il risultato non mi convince? Ti mostriamo i passaggi mentre lavoriamo: si corregge strada facendo, non alla fine.
 
 ## Pagine
-- [Servizi e prezzi](https://quadra-ia.it/#servizi)
-- [Per le aziende](https://quadra-ia.it/#aziende)
-- [Come lavoriamo](https://quadra-ia.it/#come)
-- [Contatti](https://quadra-ia.it/#contatti)
+- [Quadra · Assistenti IA e automazioni in Veneto e Lombardia](https://quadra-ia.it/)
+- [Servizi e prezzi: assistenti IA, automazioni, siti · Quadra](https://quadra-ia.it/servizi/)
+- [IA per le aziende: AI Act, controllo agenti IA, qualità ISO · Quadra](https://quadra-ia.it/aziende/)
+- [Come lavoriamo · Quadra](https://quadra-ia.it/come-lavoriamo/)
+- [Contatti · Quadra](https://quadra-ia.it/contatti/)
+- [Privacy e cookie · Quadra](https://quadra-ia.it/privacy/)
