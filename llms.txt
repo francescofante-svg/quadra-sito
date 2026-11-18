@@ -33,7 +33,7 @@ Importi non soggetti a IVA.
 
 ## Domande frequenti
 - Devo capire di tecnologia? No. Ci parli come a una persona, la parte tecnica la seguiamo noi.
-- Perché la diagnosi si paga? Perché è già lavoro vero: esci con una pagina scritta che puoi usare anche senza di noi. Se poi lavoriamo insieme, la togliamo dal prezzo.
+- Perché la diagnosi si paga? Perché è già lavoro vero: esci con una pagina scritta che puoi usare anche senza di noi.
 - Dove finiscono i miei dati? Solo dove servono al tuo lavoro. Se un servizio passa da fornitori fuori dall'Europa, te lo diciamo prima.
 - E se il risultato non mi convince? Ti mostriamo i passaggi mentre lavoriamo: si corregge strada facendo, non alla fine.
 
